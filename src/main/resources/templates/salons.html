@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Home Page</title>
+    <link th:href="@{/styles/main.css}" rel="stylesheet">
 
 </head>
 <body>
@@ -14,6 +15,7 @@
 <table>
     <tr>
         <th>SALON NAME</th>
+        <th>ADDRESS</th>
         <th>AVG SERVICE PRICE</th>
     </tr>
     <tr th:each="s: ${salons}">
