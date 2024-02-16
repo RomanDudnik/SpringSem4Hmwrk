@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Home Page</title>
+
+</head>
+<body>
+<img src = "https://beauty-prestige.ru/upload/medialibrary/305/3056eec8a60979c9b755765ac92597f4.jpg">
+<h1>Salons</h1>
+<h2>View salons</h2>
+
+<table>
+    <tr>
+        <th>SALON NAME</th>
+        <th>AVG SERVICE PRICE</th>
+    </tr>
+    <tr th:each="s: ${salons}">
+        <td th:text="${s.name}"></td>
+        <td th:text="${s.address}"></td>
+        <td th:text="${s.avgPrice}"></td>
+    </tr>
+</table>
+
+<h2>Add a product</h2>
+<form action="/salons" method="post">
+    Service: <input type="text" name="name"><br/>
+    Address: <input type="text" name="address"><br/>
+    AVG Service Price: <input type="number" step="any" name="avgPrice"><br/>
+    <button type="submit">Add salon</button>
+</form>
+</body>
+</html>
